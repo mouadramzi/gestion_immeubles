@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRMIMMO", "CRMIMMO\CRMIMMO.csproj", "{E6B1BC02-5F32-4AC1-9F1A-7B0518CD5A4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6B1BC02-5F32-4AC1-9F1A-7B0518CD5A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B1BC02-5F32-4AC1-9F1A-7B0518CD5A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B1BC02-5F32-4AC1-9F1A-7B0518CD5A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6B1BC02-5F32-4AC1-9F1A-7B0518CD5A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18E04BE0-4657-4AAF-AA74-F1B261B617F0}
+	EndGlobalSection
+EndGlobal

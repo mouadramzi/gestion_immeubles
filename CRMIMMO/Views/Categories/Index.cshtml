@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CRMIMMO.Models.Categorie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_categorie)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom_categorie)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CategorieId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CategorieId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CategorieId })
+        </td>
+    </tr>
+}
+
+</table>

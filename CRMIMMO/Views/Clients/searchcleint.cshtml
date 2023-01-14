@@ -1,0 +1,78 @@
+﻿@model IEnumerable<CRMIMMO.Models.Client>
+
+@{
+    ViewBag.Title = "Recherche Clients";
+}
+
+ 
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<form action="#" method="get" class="">
+    <div class="input-">
+        CIN :    <input type="text" name="cin" class="" placeholder="CIN..."> Nom : <input type="text" name="nom" class="" placeholder="Name..."> Adresse :
+        <select class="" id="StudentGender" name="ville">
+            <option value="">Selectionner une ville </option>
+            <option value="casablanca">Casablanca </option>
+            <option value="rabat">Rabat</option>
+        </select>
+        <span class="">
+            <button type="submit" id="button1" value="Rechercher" formaction='@Url.Action("searchcleint", "clients")'>Rechercher</button>
+
+
+        </span>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datadenaissance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numtele)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adresse)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datadenaissance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numtele)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adresse)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ClientID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ClientID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ClientID })
+        </td>
+    </tr>
+}
+
+</table>

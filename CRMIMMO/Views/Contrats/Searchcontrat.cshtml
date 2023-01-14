@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CRMIMMO.Models.Contrat>
+
+@{
+    ViewBag.Title = "Searchcontrat";
+}
+
+<h2>Searchcontrat</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<form action="#" method="get" class="">
+    <div class="input-">
+        CIN :    <input type="text" name="cin" class="" placeholder="CIN..."> Id contrat: <input type="text" name="ctt" class="" placeholder="Id contrat...">
+
+        <span class="">
+            <button type="submit" id="button2" value="Rechercher" formaction='@Url.Action("searchcontrat", "contrats")'>Rechercher</button>
+
+
+        </span>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <th>
+            Client ID
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idImmobilier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clientcin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datecontrat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.cin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idImmobilier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clientcin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datecontrat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idcontrat }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idcontrat }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idcontrat })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,52 @@
+﻿@using WebHelpers.Mvc5
+<aside class="main-sidebar">
+    <section class="sidebar">
+        @* BEGIN Search *@
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        @* END Search *@
+        @* BEGIN Menu *@
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">
+                </li>
+                <li class="@Url.IsLinkActive("Index", "Home")">
+                    <a href="@Url.Action("Index", "Home")"><i class="fa fa-link"></i> <span>Home</span></a>
+                </li>
+                <li class="@Url.IsLinkActive("Clients", "Index")">
+                    <a href="@Url.Action("Index", "Clients")"><i class="fa fa-link"></i> <span>Clients</span></a>
+                </li>
+                <li class="@Url.IsLinkActive("immobiliers", "Index")">
+                    <a href="@Url.Action("Index", "immobiliers")"><i class="fa fa-link"></i> <span>Immobilier</span></a>
+                </li>
+                <li class="@Url.IsLinkActive("contrats", "Index")">
+                    <a href="@Url.Action("Index", "contrats")"><i class="fa fa-link"></i> <span>Contrats</span></a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-link"></i> <span>Recherche</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="@Url.Action("searchcleint", "clients")">Recherche Clients</a></li>
+                        <li><a href="@Url.Action("searchimmo", "Immobiliers")">Recherche Immobilies</a></li>
+                        <li><a href="@Url.Action("Searchcontrat", "Contrats")">Recherche Contrats</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            @* END Menu *@
+        }
+        </section>
+</aside>

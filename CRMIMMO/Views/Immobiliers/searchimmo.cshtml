@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CRMIMMO.Models.Immobilier>
+
+@{
+    ViewBag.Title = "searchimmo";
+}
+
+ 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<form action="#" method="get" class="">
+    <div class="input-">
+        Type :    <input type="text" name="type" class="" placeholder="Type...">
+        Local: <input type="text" name="local" class="" placeholder="Local...">
+        Description: <input type="text" name="Description" class="" placeholder="Description...">
+
+        <span class="">
+            <button type="submit" id="button2" value="Rechercher" formaction='@Url.Action("searchimmo", "Immobiliers")'>Rechercher</button>
+
+
+        </span>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.typeImmobilierr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.localimmobilier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.surfaceimmobilier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.typeImmobilierr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.localimmobilier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.surfaceimmobilier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prix)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ImmobilierId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ImmobilierId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ImmobilierId })
+        </td>
+    </tr>
+}
+
+</table>
